@@ -1,25 +1,114 @@
-ion-list {
-    padding: 0;
-    ion-item{
-        --lines:none;
+.header {
+    height: 180px;
+    background: var(--maincolor1);
+
+    ion-toolbar {
+        font-family: 'Poppins-Bold';
+        --background:var(--maincolor1);
+        color:#fff;
+
+
+    ion-icon{
+        color:#fff;
     }
-}
-ion-toolbar {
-    font-family: 'Poppins-Bold';
-    --background:var(--maincolor1);
-    color:#fff;
-}
+    }
 
-ion-accordion-group {
-    ion-label {
-        color:var(--maincolor2);
-        font-size:14px;
 
-    }     
+    .headercontent{
+      display: block;
+        align-items: center;
+        text-align: center;
+        h1 {
+            font-size: 20px;
+            font-family: 'Poppins-Bold';
+        }
+        p{
+            margin-top: -12px;
+            font-size: 12px;
+        }
+    }
+
+
+    .logo{
+        position: relative;
+        margin-top: -35px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80px;
+        height: 80px;
+        background: #08143a;
+        z-index: 999;
+        border-radius: 20%;
+        border: 2px solid #fff;
+    }
+
     
 }
 
-.accordion-header {
-    --background: #e2e3e7;
+.container{
+    margin-top: 40px; 
+
+    ion-card {
+        padding-top: 15px;
+        .formlabel {
+            color:var(--textcolor2);
+            font-family: 'Poppins-Bold';
+            padding-left: 20px;
+        }
+        ion-item {
+          --background:#fff;
+            ion-icon{
+                color:var(--maincolor1);
+                margin: 0;
+            }
+            ion-label {
+                color:var(--textcolor2);
+
+                ion-input{
+                    font-family: 'Poppins-Regular';
+                    font-size: 14px;
+                    font-weight: 800;
+                    color:var(--textcolor2);
+                }
+            }
+
+        }
+    }
+    
+    ion-accordion-group {
+        ion-label {
+            color:var(--maincolor2);
+            font-size:14px;    
+        }     
+
+        .accordion-header {
+            --background: #e2e3e7;
+            
+        }
+        
+    }
+  
+    .headerbtns{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .btn1, .btn2 {
+            text-transform: none;
+        }
+        .btn1 {
+            --background: var(--maincolor1);
+        }
+    
+        .btn2 {
+            --background: var(--textcolor2);
+        }
+       }
     
 }
+
+
+
+
+

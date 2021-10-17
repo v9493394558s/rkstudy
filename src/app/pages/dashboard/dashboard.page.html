@@ -1,32 +1,66 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Dashboard</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-toggle autoHide="false">
-      <ion-button (click)="toggleMenu()" >
-        <ion-icon slot="icon-only" name="menu" ></ion-icon>
-      </ion-button>
-    </ion-menu-toggle>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="header">
+    <ion-header class="ion-no-border">
+      <ion-toolbar mode="ios">
+        <ion-title>
+          Dashboard</ion-title>
+        <ion-buttons slot="start">
+          <ion-menu-toggle autoHide="false">
+          <ion-button (click)="toggleMenu()" >
+            <ion-icon  slot="icon-only" name="menu" ></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
 
-<!-- Open Accordion -->
-<ion-accordion-group value="colors" mode="ios" >
-  <ion-accordion value="colors" toggle-icon="chevron-down">
-    <ion-item slot="header">
-      <!-- <ion-icon style="color:var(--textcolor1)" slot="end" name="chevron-forward"></ion-icon> -->
-      <ion-label>Colors</ion-label>
+    <div class="headercontent">
+      <h1>RK Study Circle</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nulla!</p>
+    </div>
+
+    <div class="logo"></div>
+  </div>
+
+  <div class="container">
+
+  <div class="userform">
+    
+  <ion-card>
+    <div class="formlabel">Email Id:</div>
+    <ion-item line="none">      
+      <ion-icon slot="start" name="at"></ion-icon>
+      <ion-label>
+        <ion-input type="text" placeholder="email id"></ion-input>
+      </ion-label>     
     </ion-item>
+  </ion-card>
 
-    <ion-list slot="content">
-      <ion-item lines="none" *ngFor="let i of [].constructor(5)">
-        <ion-label>Red</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-accordion>
-</ion-accordion-group>
+  <ion-card>
+    <div class="formlabel">Password:</div>
+    <ion-item line="none">      
+      <ion-icon slot="start" name="key"></ion-icon>
+      <ion-label>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-label>     
+    </ion-item>
+  </ion-card>
+
+  <div class="headerbtns">
+    <ion-button shape="round"  class="btn1">
+      <ion-icon slot="start" name="key"></ion-icon>
+      Login
+    </ion-button>
+
+    <ion-button shape="round"  class="btn2">
+      <ion-icon slot="start" name="person"></ion-icon>
+      Register
+    </ion-button>
+  </div>
+
+</div>
+
+  </div>
+
+
 </ion-content>
