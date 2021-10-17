@@ -1,0 +1,66 @@
+// fonts
+@font-face { font-family: 'Poppins-Bold';    src: url(../assets/fonts/Poppins/Poppins-Bold.ttf);}
+@font-face { font-family: 'Poppins-Regular';    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);}
+
+// *{
+//     background:#fafafa;
+// }
+
+ion-content {
+     --background:#fafafa;
+}
+
+:root {
+    --maincolor1: #f4841f;
+    --maincolor2: #08143a;
+    --textcolor1: #8c9dab;
+    --textcolor2: #2c2c2c;
+}
+
+ion-card, ion-item, ion-input, ion-toolbar {
+    --background: #ffffff;
+}
+
+h1,h2,h3 { 
+    font-family: 'Poppins-Bold';
+}
+    
+
+p {
+    font-family: 'Poppins-Regular';
+}
+
+.lighticon, .lighttext {color: var(--textcolor1)}
+.darkicon, .darktext { color: var(--maincolor2)}
+
+
+h1{font-size: 18px;}
+h2{font-size: 16px;}
+h3{font-size: 14px;}
+
+
+ion-card-header {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 0;
+
+}
+
+// Avatars
+.roundAvatar {
+    //background: var(--textcolor1);
+    border-radius: 50%;
+}
+.squareAvatar {
+    //background: var(--textcolor1);
+    border-radius: 20%;
+}
+
+.imgfixed {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.smalltext {
+    font-size: 12px;
+}

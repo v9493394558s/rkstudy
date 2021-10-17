@@ -1,0 +1,45 @@
+<div class="sidemenu">
+  <ion-split-pane contentId="menu-content" when="xl">
+    <ion-menu contentId="menu-content">
+      <div class="menuheader">
+        <h2>Welcome</h2>
+        <p class="smalltext">Login account or create new one for free</p>
+
+        <div class="headerbtns">
+          <ion-button shape="round"  class="btn1">
+            <ion-icon slot="start" name="key"></ion-icon>
+            Login
+          </ion-button>
+  
+          <ion-button shape="round"  class="btn2">
+            <ion-icon slot="start" name="person"></ion-icon>
+            Register
+          </ion-button>
+        </div>
+
+      
+      </div>
+      <ion-content>
+        
+          <div class="sideopts">
+            <ion-menu-toggle autoHide="false" *ngFor="let menu of sidemenus">
+              <ion-item routerLink="{{menu.router_link}}" routerDirection="root"  lines="none" >
+                <ion-icon class="lighticon" slot="start" name="{{menu.icon_name}}"></ion-icon>
+                <ion-label>
+                  <h3 class="darktext">{{menu.label}}</h3>
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>             
+          </div>
+          
+      </ion-content>
+
+      <ion-footer>
+        <ion-toolbar>
+          <ion-title>Version: 1.0.0</ion-title>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-menu>
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
+  </ion-split-pane>
+</div>

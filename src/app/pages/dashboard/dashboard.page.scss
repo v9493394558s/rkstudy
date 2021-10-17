@@ -1,0 +1,25 @@
+ion-list {
+    padding: 0;
+    ion-item{
+        --lines:none;
+    }
+}
+ion-toolbar {
+    font-family: 'Poppins-Bold';
+    --background:var(--maincolor1);
+    color:#fff;
+}
+
+ion-accordion-group {
+    ion-label {
+        color:var(--maincolor2);
+        font-size:14px;
+
+    }     
+    
+}
+
+.accordion-header {
+    --background: #e2e3e7;
+    
+}

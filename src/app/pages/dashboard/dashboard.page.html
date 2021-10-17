@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Dashboard</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-toggle autoHide="false">
+      <ion-button (click)="toggleMenu()" >
+        <ion-icon slot="icon-only" name="menu" ></ion-icon>
+      </ion-button>
+    </ion-menu-toggle>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- Open Accordion -->
+<ion-accordion-group value="colors" mode="ios" >
+  <ion-accordion value="colors" toggle-icon="chevron-down">
+    <ion-item slot="header">
+      <!-- <ion-icon style="color:var(--textcolor1)" slot="end" name="chevron-forward"></ion-icon> -->
+      <ion-label>Colors</ion-label>
+    </ion-item>
+
+    <ion-list slot="content">
+      <ion-item lines="none" *ngFor="let i of [].constructor(5)">
+        <ion-label>Red</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-accordion>
+</ion-accordion-group>
+</ion-content>
