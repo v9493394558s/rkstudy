@@ -3,7 +3,7 @@
     <ion-header class="ion-no-border">
       <ion-toolbar mode="ios">
         <ion-title>
-          Dashboard</ion-title>
+          Home</ion-title>
         <ion-buttons slot="start">
           <ion-menu-toggle autoHide="false">
           <ion-button (click)="toggleMenu()" >
@@ -11,15 +11,37 @@
           </ion-button>
         </ion-menu-toggle>
         </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClick()">
+            <ion-icon size="small" slot="icon-only" name="notifications"></ion-icon>
+            <div class="notification">
+              <ion-badge> 10</ion-badge>
+            </div>
+          </ion-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
     <div class="headercontent">
-      <ion-slides pager="true">
-        <ion-slide>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt.</ion-slide>
-        <ion-slide>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt.</ion-slide>
-        <ion-slide>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt.</ion-slide>
-        <ion-slide>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt.</ion-slide>
+      <ion-slides pager="true" pager="true" [options]="slideOptsOne" #slideWithNav
+      (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+        <ion-slide *ngFor="let s of sliderOne.slidesItems">
+          <div class="slide1">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <p>Lorem ipsum, dolor sit amet consectetur </p>
+                  <div class="centerItem"><ion-button shape="round">Submit</ion-button></div>
+                </ion-col>
+                <ion-col size="6">
+                  <div class="slideimg">
+                    <img src="../../../assets/images/test2.png" alt="" srcset="">
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>            
+          </div>
+        </ion-slide>
       </ion-slides>
     </div>
 
@@ -28,7 +50,7 @@
 
   <div class="container">
        <ion-toolbar class="titleToolbar">
-         <ion-title><h2>Categories</h2></ion-title>
+         <ion-title><h2>Study Materials</h2></ion-title>
          <ion-buttons slot="end">
            <ion-button fill="outline"  shape="round" (click)="onClick()">
              View more
@@ -36,29 +58,7 @@
          </ion-buttons>
        </ion-toolbar>
 
-       <div class="categoriesSlides">
-        <h5>Auto Play Slider</h5>
-
-        <ion-grid>
-          <ion-row>
-            <ion-col size="12">
-      
-              <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
-                (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
-                <ion-slide *ngFor="let s of sliderOne.slidesItems">
-                  <img src="https://i.picsum.photos/id/{{s.id}}/300/200.jpg">
-                  <span class="slide-text">Slide id {{s.id}}</span>
-                </ion-slide>
-              </ion-slides>
-      
-            </ion-col>
-      
-          </ion-row>
-        </ion-grid>
-      
-      
-        <h5>Slider with Space Between</h5>
-      
+       <div class="categoriesSlides">      
         <ion-grid>
           <ion-row>
             <ion-col size="1">
@@ -66,15 +66,15 @@
                 <div class="prev-icon-custom custon-nav" [class.disabled]="sliderTwo.isBeginningSlide"></div>
               </span>
             </ion-col>
-            <ion-col size="10">
-      
+            <ion-col size="12">
+              <div class="booksslide">
               <ion-slides pager="false" [options]="slideOptsTwo" #slideWithNav2
                 (ionSlideDidChange)="SlideDidChange(sliderTwo,slideWithNav2)">
                 <ion-slide *ngFor="let s of sliderTwo.slidesItems">
-                  <img src="https://i.picsum.photos/id/{{s.id}}/300/200.jpg">
+                  <img class="coverImg" src="../../../assets/images/books/image{{s.id}}.jpg">
                 </ion-slide>
               </ion-slides>
-      
+            </div>
             </ion-col>
             <ion-col size="1">
               <span class="slider-nav arrow-next" (click)="slideNext(sliderTwo,slideWithNav2)">
@@ -83,8 +83,52 @@
             </ion-col>
           </ion-row>
         </ion-grid>
+      </div>
+
+
+
+
+      <div class="">     
+        <ion-toolbar class="titleToolbar">
+          <ion-title><h2>Latest News</h2></ion-title>
+          <ion-buttons slot="end">
+            <ion-button fill="outline"  shape="round" (click)="onClick()">
+              View more
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar> 
+        <ion-grid>
+          <ion-row> 
+            <ion-col size="12">
+              <div class="latestnews">
+              <ion-slides pager="false" [options]="latestnews">
+                <ion-slide *ngFor="let s of [].constructor(10)">
+                  <ion-card>
+                    <ion-card-header>
+                      <div class="coverImg2">
+                        <img  src="../../../assets/images/test2.png" alt="" srcset="">
+                      </div>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <h3>Some Text</h3>
+                      <p>Lorem ipsum dolor sit amet.</p>
+                    </ion-card-content>
+                  </ion-card>
+
+                </ion-slide>
+              </ion-slides>
+            </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+        
+
+
+
       
-        <h5>Slider at bottom</h5>
+        <!-- <h5>Slider at bottom</h5>
       
         <ion-grid>
           <ion-row>
@@ -109,8 +153,8 @@
               </span>
             </ion-col>
           </ion-row>
-        </ion-grid>
-       </div>
+        </ion-grid> -->
+       
   </div>
 
 

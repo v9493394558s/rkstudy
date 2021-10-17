@@ -40,15 +40,20 @@ export class DashboardPage implements OnInit {
   };
   slideOptsTwo = {
     initialSlide: 1,
-    slidesPerView: 2,
+    slidesPerView: 5,
     loop: true,
     centeredSlides: true,
-    spaceBetween: 20
+    spaceBetween: 10
   };
   slideOptsThree = {
     initialSlide: 0,
     slidesPerView: 3
   };
+
+  latestnews = {
+    initialSlide: 0,
+    slidesPerView: 2.2
+  }
 
   constructor(
   ) {
@@ -59,19 +64,19 @@ export class DashboardPage implements OnInit {
       isEndSlide: false,
       slidesItems: [
         {
-          id: 995
+          id: 1
         },
         {
-          id: 925
+          id: 2
         },
         {
-          id: 940
+          id: 3
         },
         {
-          id: 943
+          id: 4
         },
         {
-          id: 944
+          id: 5
         }
       ]
     };
@@ -81,21 +86,21 @@ export class DashboardPage implements OnInit {
       isBeginningSlide: true,
       isEndSlide: false,
       slidesItems: [
-        {
-          id: 324
-        },
-        {
-          id: 321
-        },
-        {
-          id: 435
-        },
-        {
-          id: 524
-        },
-        {
-          id: 235
-        }
+        {id: 1},
+        {id: 2},
+        {id: 3},
+        {id: 4},
+        {id: 5},
+        {id: 6},
+        {id: 7},
+        {id: 8},
+        {id: 9},
+        {id: 10},
+        {id: 11},
+        {id: 12},
+        {id: 13},
+        {id: 14},
+        {id: 15}      
       ]
     };
     //Item object for Fashion
