@@ -4,4 +4,4 @@ author: Vasu Peddinti
 apptype: RK Study Circle
 
 
-rkstudy token: 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
+rkstudy token: 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
