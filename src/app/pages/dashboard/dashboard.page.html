@@ -15,63 +15,102 @@
     </ion-header>
 
     <div class="headercontent">
-      <h1>RK Study Circle</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nulla!</p>
+      <ion-slides pager="true">
+        <ion-slide>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt.</ion-slide>
+        <ion-slide>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt.</ion-slide>
+        <ion-slide>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt.</ion-slide>
+        <ion-slide>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sunt.</ion-slide>
+      </ion-slides>
     </div>
 
-    <div class="logo"></div>
+   
   </div>
 
   <div class="container">
+       <ion-toolbar class="titleToolbar">
+         <ion-title><h2>Categories</h2></ion-title>
+         <ion-buttons slot="end">
+           <ion-button fill="outline"  shape="round" (click)="onClick()">
+             View more
+           </ion-button>
+         </ion-buttons>
+       </ion-toolbar>
 
-  <div class="userform">
-    
-  <ion-card>
-    <div class="formlabel">Email Id:</div>
-    <ion-item line="none">      
-      <ion-icon slot="start" name="at"></ion-icon>
-      <ion-label>
-        <ion-input type="text" placeholder="email id"></ion-input>
-      </ion-label>     
-    </ion-item>
-  </ion-card>
+       <div class="categoriesSlides">
+        <h5>Auto Play Slider</h5>
 
-  <ion-card>
-    <div class="formlabel">Password:</div>
-    <ion-item line="none">      
-      <ion-icon slot="start" name="key"></ion-icon>
-      <ion-label>
-        <ion-input type="password" placeholder="Password"></ion-input>
-      </ion-label>     
-    </ion-item>
-  </ion-card>
-
-  <div class="forgotpass">
-    <p>Forgot Password?</p>
-  </div>
-
-  <div class="headerbtns">
-    <ion-button shape="round"  class="btn1">
-      <ion-icon slot="start" name="key"></ion-icon>
-      Login
-    </ion-button>
-
-    
-  </div>
-
-  <div class="register">
-    <p>You don't have an account?</p>
-  </div>
-
-  <div class="btnregister">
-    <ion-button shape="round" >
-      <ion-icon slot="start" name="person"></ion-icon>
-      Register
-    </ion-button>
-  </div>
-
-</div>
-
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+      
+              <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+                (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+                <ion-slide *ngFor="let s of sliderOne.slidesItems">
+                  <img src="https://i.picsum.photos/id/{{s.id}}/300/200.jpg">
+                  <span class="slide-text">Slide id {{s.id}}</span>
+                </ion-slide>
+              </ion-slides>
+      
+            </ion-col>
+      
+          </ion-row>
+        </ion-grid>
+      
+      
+        <h5>Slider with Space Between</h5>
+      
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1">
+              <span class="slider-nav arrow-prev" (click)="slidePrev(sliderTwo,slideWithNav2)">
+                <div class="prev-icon-custom custon-nav" [class.disabled]="sliderTwo.isBeginningSlide"></div>
+              </span>
+            </ion-col>
+            <ion-col size="10">
+      
+              <ion-slides pager="false" [options]="slideOptsTwo" #slideWithNav2
+                (ionSlideDidChange)="SlideDidChange(sliderTwo,slideWithNav2)">
+                <ion-slide *ngFor="let s of sliderTwo.slidesItems">
+                  <img src="https://i.picsum.photos/id/{{s.id}}/300/200.jpg">
+                </ion-slide>
+              </ion-slides>
+      
+            </ion-col>
+            <ion-col size="1">
+              <span class="slider-nav arrow-next" (click)="slideNext(sliderTwo,slideWithNav2)">
+                <div class="next-icon-custom custon-nav" [class.disabled]="sliderTwo.isEndSlide"></div>
+              </span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      
+        <h5>Slider at bottom</h5>
+      
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1">
+              <span class="slider-nav arrow-prev" (click)="slidePrev(sliderThree,slideWithNav3)">
+                <div class="prev-icon-custom custon-nav" [class.disabled]="sliderThree.isBeginningSlide"></div>
+              </span>
+            </ion-col>
+            <ion-col size="10">
+      
+              <ion-slides pager="false" [options]="slideOptsThree" #slideWithNav3
+                (ionSlideDidChange)="SlideDidChange(sliderThree,slideWithNav3)">
+                <ion-slide *ngFor="let s of sliderThree.slidesItems">
+                  <img src="https://i.picsum.photos/id/{{s.id}}/300/200.jpg">
+                </ion-slide>
+              </ion-slides>
+      
+            </ion-col>
+            <ion-col size="1">
+              <span class="slider-nav arrow-next" (click)="slideNext(sliderThree,slideWithNav3)">
+                <div class="next-icon-custom custon-nav" [class.disabled]="sliderThree.isEndSlide"></div>
+              </span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+       </div>
   </div>
 
 
