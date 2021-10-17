@@ -48,7 +48,6 @@
 
 .container{
     margin-top: 40px; 
-
     ion-card {
         padding-top: 15px;
         .formlabel {
@@ -88,6 +87,14 @@
         }
         
     }
+
+    .forgotpass{
+        p {
+            text-align: right;
+            color: var(--maincolor1);
+            padding-right: 15px;
+        }
+    }
   
     .headerbtns{
 
@@ -101,10 +108,25 @@
             --background: var(--maincolor1);
         }
     
-        .btn2 {
-            --background: var(--textcolor2);
+       
+       }
+
+       .register {
+        p {
+            text-align: center;
+            color: var(--maincolor1);
+            padding-right: 15px;
         }
        }
+
+       .btnregister {
+        text-align: center;
+        ion-button{
+            --background: var(--textcolor2);
+            text-transform: none;
+        }
+        
+    }
     
 }
 
