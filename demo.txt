@@ -1,3 +1,5 @@
 email: vsoftwaresoluntions@gmail.com
 author: Vasu Peddinti
 
+apptype: RK Study Circle
+
